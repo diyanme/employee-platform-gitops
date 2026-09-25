@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/diyanme/employee-platform
-  tag: develop
+  tag: ff942d7246dbe712e700c13f7b28f6b01046a66d
 
 ingress:
   enabled: true
