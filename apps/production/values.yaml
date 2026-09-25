@@ -1,0 +1,29 @@
+replicaCount: 2
+
+image:
+  repository: ghcr.io/diyanme/employee-platform
+  tag: main
+
+ingress:
+  enabled: true
+  className: traefik
+  host: employee.local
+  path: /
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 500m
+    memory: 512Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 70
+
+podDisruptionBudget:
+  enabled: true
+  minAvailable: 1
