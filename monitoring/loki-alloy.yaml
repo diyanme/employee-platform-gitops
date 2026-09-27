@@ -5,6 +5,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://grafana.github.io/helm-charts
     chart: loki
@@ -14,6 +15,7 @@ spec:
         deploymentMode: SingleBinary
 
         loki:
+          useTestSchema: true
           auth_enabled: false
           commonConfig:
             replication_factor: 1
@@ -32,8 +34,10 @@ spec:
 
         read:
           replicas: 0
+
         write:
           replicas: 0
+
         backend:
           replicas: 0
 
@@ -68,6 +72,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
+
   source:
     repoURL: https://grafana.github.io/helm-charts
     chart: alloy
