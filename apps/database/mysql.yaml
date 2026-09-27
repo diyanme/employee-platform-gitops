@@ -12,6 +12,23 @@ stringData:
 
 ---
 apiVersion: v1
+kind: Secret
+metadata:
+  name: employee-platform-app
+  namespace: employee-staging
+type: Opaque
+stringData:
+  APP_KEY: "base64:HUDX9zhoinA9SB6fARlW2PjWQ4CjWEzhh1FAUHsTcFU="
+  DB_CONNECTION: mysql
+  DB_HOST: mysql
+  DB_PORT: "3306"
+  DB_DATABASE: employee_platform
+  DB_USERNAME: employee_user
+  DB_PASSWORD: employee_password
+  SESSION_DRIVER: file
+
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-pvc
