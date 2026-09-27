@@ -11,6 +11,8 @@ spec:
     targetRevision: 91.7.0
     helm:
       values: |
+         crds:
+           enabled: false
         grafana:
           enabled: true
           adminPassword: admin
